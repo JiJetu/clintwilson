@@ -58,7 +58,7 @@ const ShuttleCard = ({ shuttle, onEdit, onDelete }) => {
         </div>
         <div className="flex items-center justify-between">
           <p className="text-white/40 text-sm font-medium leading-none">Driver: <span className="text-white/80">{shuttle.driver}</span></p>
-          <span className="text-primary font-black text-sm uppercase tracking-tighter">ID: {shuttle.displayId || '001'}</span>
+          <span className="text-primary font-medium text-sm uppercase tracking-tighter">ID: {shuttle.displayId || '001'}</span>
         </div>
       </div>
 

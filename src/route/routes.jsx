@@ -4,6 +4,8 @@ import Dashboard from "../page/Dashboard";
 import Booking from "../page/Booking";
 import Monitor from "../page/Monitor";
 import Shuttle from "../page/Shuttle";
+import Schedules from "../page/Schedules";
+import Driver from "../page/Driver";
 
 const router = createBrowserRouter([
     {
@@ -33,11 +35,11 @@ const router = createBrowserRouter([
             },
             {
                 path: "routes",
-                element: <h1 className="text-2xl font-bold text-white">Routes</h1>,
+                element: <Schedules />,
             },
             {
                 path: "drivers",
-                element: <h1 className="text-2xl font-bold text-white">Drivers</h1>,
+                element: <Driver />,
             },
             {
                 path: "users",

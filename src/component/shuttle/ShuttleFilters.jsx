@@ -2,18 +2,18 @@ import React from 'react';
 import SearchInput from '../ui/SearchInput';
 import FormSelect from '../ui/FormSelect';
 
-const BookingFilters = ({ searchQuery, setSearchQuery, statusFilter, setStatusFilter }) => {
+const ShuttleFilters = ({ searchQuery, setSearchQuery, statusFilter, setStatusFilter }) => {
   const statusOptions = [
     { label: 'All Status', value: 'All Status' },
-    { label: 'Confirmed', value: 'Confirmed' },
-    { label: 'Pending', value: 'Pending' },
-    { label: 'Cancelled', value: 'Cancelled' }
+    { label: 'Active', value: 'Active' },
+    { label: 'Idle', value: 'Idle' },
+    { label: 'Maintenance', value: 'Maintenance' }
   ];
 
   return (
     <div className="flex flex-col md:flex-row gap-4">
       <SearchInput 
-        placeholder="Search by passenger name..."
+        placeholder="Search by shuttle name or plate..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         onClear={() => setSearchQuery('')}
@@ -29,4 +29,4 @@ const BookingFilters = ({ searchQuery, setSearchQuery, statusFilter, setStatusFi
   );
 };
 
-export default BookingFilters;
+export default ShuttleFilters;

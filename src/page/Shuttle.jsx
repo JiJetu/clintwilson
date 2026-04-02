@@ -3,6 +3,7 @@ import Header from '../component/shared/Header';
 import ShuttleCard from '../component/shuttle/ShuttleCard';
 import Modal from '../component/ui/Modal';
 import ShuttleFormModal from '../component/shuttle/ShuttleFormModal';
+import ShuttleFilters from '../component/shuttle/ShuttleFilters';
 import { Plus } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -17,6 +18,8 @@ const initialShuttles = [
 
 const Shuttle = () => {
     const [shuttles, setShuttles] = useState(initialShuttles);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [statusFilter, setStatusFilter] = useState('All Status');
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [editingShuttle, setEditingShuttle] = useState(null);
 
@@ -52,34 +55,52 @@ const Shuttle = () => {
         setIsModalOpen(false);
     };
 
+    const filteredShuttles = shuttles.filter(s => {
+        const matchesSearch = s.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            s.plate.toLowerCase().includes(searchQuery.toLowerCase());
+        const matchesStatus = statusFilter === 'All Status' || s.status === statusFilter;
+        return matchesSearch && matchesStatus;
+    });
+
     return (
-        <div className="space-y-10 animate-in fade-in duration-700">
-            {/* Page Header */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                <Header
-                    title="Shuttle Management"
-                    description="Manage your fleet vehicles"
+        <div className="animate-in fade-in duration-700">
+            <div className='space-y-10'>
+                {/* Page Header */}
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <Header
+                        title="Shuttle Management"
+                        description="Manage your fleet vehicles"
+                    />
+                    <button
+                        onClick={handleAddClick}
+                        className="flex items-center justify-center gap-2 px-8 py-4 bg-primary text-[#101319] font-semibold rounded-2xl hover:bg-primary/90 transition-all active:scale-95 shadow-xl shadow-primary/20 group"
+                    >
+                        <Plus size={20} className="group-hover:rotate-90 transition-transform duration-300" />
+                        Add Shuttle
+                    </button>
+                </div>
+
+                {/* Filters */}
+                <ShuttleFilters 
+                    searchQuery={searchQuery}
+                    setSearchQuery={setSearchQuery}
+                    statusFilter={statusFilter}
+                    setStatusFilter={setStatusFilter}
                 />
-                <button
-                    onClick={handleAddClick}
-                    className="flex items-center justify-center gap-2 px-8 py-4 bg-primary text-[#101319] font-semibold rounded-2xl hover:bg-primary/90 transition-all active:scale-95 shadow-xl shadow-primary/20 group"
-                >
-                    <Plus size={20} className="group-hover:rotate-90 transition-transform duration-300" />
-                    Add Shuttle
-                </button>
+
+                {/* Shuttle Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                    {filteredShuttles.map((shuttle) => (
+                        <ShuttleCard
+                            key={shuttle.id}
+                            shuttle={shuttle}
+                            onEdit={handleEditClick}
+                            onDelete={handleDeleteClick}
+                        />
+                    ))}
+                </div>
             </div>
 
-            {/* Shuttle Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                {shuttles.map((shuttle) => (
-                    <ShuttleCard
-                        key={shuttle.id}
-                        shuttle={shuttle}
-                        onEdit={handleEditClick}
-                        onDelete={handleDeleteClick}
-                    />
-                ))}
-            </div>
 
             {/* Add/Edit Modal */}
             <Modal

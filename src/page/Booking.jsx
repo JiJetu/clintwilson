@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Header from '../component/shared/Header';
 import BookingFilters from '../component/booking/BookingFilters';
 import BookingTable from '../component/booking/BookingTable';
@@ -23,28 +23,31 @@ const Booking = () => {
     };
 
     return (
-        <div className="space-y-8 animate-in fade-in duration-700">
-            <Header
-                title="Bookings"
-                description="View ride requests and reservations"
-            />
-
-            <div className="space-y-6">
-                {/* Search and Filters */}
-                <BookingFilters
-                    searchQuery={searchQuery}
-                    setSearchQuery={setSearchQuery}
-                    statusFilter={statusFilter}
-                    setStatusFilter={setStatusFilter}
+        <div className="animate-in fade-in duration-700">
+            <div className="space-y-8">
+                <Header
+                    title="Bookings"
+                    description="View ride requests and reservations"
                 />
 
-                {/* Bookings Table */}
-                <BookingTable
-                    onRowClick={handleRowClick}
-                    searchQuery={searchQuery}
-                    statusFilter={statusFilter}
-                />
+                <div className="space-y-6">
+                    {/* Search and Filters */}
+                    <BookingFilters
+                        searchQuery={searchQuery}
+                        setSearchQuery={setSearchQuery}
+                        statusFilter={statusFilter}
+                        setStatusFilter={setStatusFilter}
+                    />
+
+                    {/* Bookings Table */}
+                    <BookingTable
+                        onRowClick={handleRowClick}
+                        searchQuery={searchQuery}
+                        statusFilter={statusFilter}
+                    />
+                </div>
             </div>
+
 
             {/* User Profile Modal */}
             <Modal
