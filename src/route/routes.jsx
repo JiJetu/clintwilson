@@ -6,6 +6,7 @@ import Monitor from "../page/Monitor";
 import Shuttle from "../page/Shuttle";
 import Schedules from "../page/Schedules";
 import Driver from "../page/Driver";
+import UserManagement from "../page/UserManagement";
 
 const router = createBrowserRouter([
     {
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "users",
-                element: <h1 className="text-2xl font-bold text-white">Users</h1>,
+                element: <UserManagement />,
             },
             {
                 path: "support",

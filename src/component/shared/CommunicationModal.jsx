@@ -1,39 +1,51 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { notificationSchema } from '../../lib/validation/notification.schema.js';
 import FormInput from '../ui/FormInput';
 import FormTextarea from '../ui/FormTextarea';
 import Button from '../ui/Button';
-import { Send } from 'lucide-react';
+import { Send, Mail } from 'lucide-react';
 
-const NotificationModal = ({ driver, onSubmit, onCancel, isSubmitting }) => {
+const CommunicationModal = ({ 
+  onSubmit, 
+  onCancel, 
+  isSubmitting,
+  schema, // Dynamic schema
+  type = 'notification', // 'notification' or 'email'
+  titleLabel = 'Title',
+  titlePlaceholder = 'Enter title...',
+  messageLabel = 'Message',
+  messagePlaceholder = 'Enter message...',
+  submitLabel = 'Send'
+}) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: zodResolver(notificationSchema),
+    resolver: zodResolver(schema),
     defaultValues: {
       title: '',
       message: '',
     },
   });
 
+  const Icon = type === 'email' ? Mail : Send;
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="px-4 md:px-8 py-4 space-y-6 animate-in slide-in-from-bottom-5 duration-500 inter text-left">
       <div className="space-y-4">
-        {/* Title */}
+        {/* Title/Subject */}
         <FormInput
-          label="Tittle of notification"
-          placeholder="Regarding last ride"
+          label={titleLabel}
+          placeholder={titlePlaceholder}
           error={errors.title}
           {...register("title")}
         />
 
         {/* Message */}
         <FormTextarea
-          label="Message Description"
-          placeholder="Type your notify message....."
+          label={messageLabel}
+          placeholder={messagePlaceholder}
           rows={6}
           error={errors.message}
           {...register("message")}
@@ -45,14 +57,14 @@ const NotificationModal = ({ driver, onSubmit, onCancel, isSubmitting }) => {
         <Button
           type="submit"
           isLoading={isSubmitting}
-          icon={Send}
+          icon={Icon}
           className="px-8 py-3 rounded-xl"
         >
-          Send
+          {submitLabel}
         </Button>
       </div>
     </form>
   );
 };
 
-export default NotificationModal;
+export default CommunicationModal;

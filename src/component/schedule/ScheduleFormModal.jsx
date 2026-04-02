@@ -28,8 +28,8 @@ const ScheduleFormModal = ({ initialData, onSubmit, onCancel, isSubmitting }) =>
   const statuses = ["Active", "Inactive"];
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="px-4 md:px-8 py-4 space-y-6 animate-in slide-in-from-bottom-5 duration-500 inter text-left">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="px-6 md:px-8 py-6 space-y-8 inter text-left">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
         {/* Name */}
         <div className="md:col-span-2">
           <FormInput
