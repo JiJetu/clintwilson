@@ -26,7 +26,7 @@ const FormSelect = React.forwardRef(({ label, error, options = [], placeholder, 
 
   // Get current label based on value
   const getCurrentLabel = () => {
-    const selected = options.find(opt => 
+    const selected = options.find(opt =>
       (typeof opt === 'string' ? opt : opt.value) === value
     );
     if (!selected) return placeholder || "Select option";
@@ -44,9 +44,8 @@ const FormSelect = React.forwardRef(({ label, error, options = [], placeholder, 
         {/* Trigger Box */}
         <div
           onClick={() => setIsOpen(!isOpen)}
-          className={`w-full bg-fill_color border ${
-            error ? 'border-red-500/50' : (isOpen ? 'border-primary/50' : 'border-white/5')
-          } rounded-2xl py-4 px-6 text-white transition-all cursor-pointer font-medium flex items-center justify-between group/trigger hover:border-white/10`}
+          className={`w-full bg-fill_color border ${error ? 'border-red-500/50' : (isOpen ? 'border-primary/50' : 'border-white/5')
+            } rounded-2xl py-4 px-6 text-white transition-all cursor-pointer font-medium flex items-center justify-between group/trigger hover:border-white/10`}
         >
           <span className={!value ? "text-white/20" : "text-white"}>
             {getCurrentLabel()}
@@ -71,11 +70,10 @@ const FormSelect = React.forwardRef(({ label, error, options = [], placeholder, 
                     <li
                       key={val || idx}
                       onClick={() => handleSelect(val)}
-                      className={`px-5 py-3 rounded-xl text-sm font-medium transition-all cursor-pointer flex items-center justify-between ${
-                        isSelected 
-                          ? 'bg-primary text-[#101319]' 
+                      className={`px-5 py-3 rounded-xl text-sm font-medium transition-all cursor-pointer flex items-center justify-between ${isSelected
+                          ? 'bg-primary text-[#101319]'
                           : 'text-white/60 hover:bg-white/5 hover:text-white'
-                      }`}
+                        }`}
                     >
                       {lab}
                       {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-[#101319]" />}
@@ -92,12 +90,12 @@ const FormSelect = React.forwardRef(({ label, error, options = [], placeholder, 
 
       {/* Hidden native input for form compatibility if needed, 
           but react-hook-form usually handles this via the trigger's ref or Controller */}
-      <input 
-        type="hidden" 
-        name={name} 
-        value={value || ''} 
-        ref={ref} 
-        {...props} 
+      <input
+        type="hidden"
+        name={name}
+        value={value || ''}
+        ref={ref}
+        {...props}
       />
 
       {error && (

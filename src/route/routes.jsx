@@ -7,13 +7,16 @@ import Shuttle from "../page/Shuttle";
 import Schedules from "../page/Schedules";
 import Driver from "../page/Driver";
 import UserManagement from "../page/UserManagement";
+import Support from "../page/Support";
+import Feedback from "../page/Feedback";
+import Login from "../page/auth/Login";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Navigate to="/dashboard" replace />,
     },
-    { path: "/login", element: <h1>Login</h1> },
+    { path: "/login", element: <Login /> },
     {
         path: "/dashboard",
         element: <DashboardLayout />,
@@ -48,11 +51,11 @@ const router = createBrowserRouter([
             },
             {
                 path: "support",
-                element: <h1 className="text-2xl font-bold text-white">Support & Help Desk</h1>,
+                element: <Support />,
             },
             {
                 path: "feedback",
-                element: <h1 className="text-2xl font-bold text-white">Feedback & Ratings</h1>,
+                element: <Feedback />,
             },
         ],
     },
