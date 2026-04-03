@@ -35,16 +35,16 @@ const DashboardHeader = ({ onToggle, collapsed }) => {
 
       <div className="flex items-center gap-6">
         <div className="relative" ref={notificationRef}>
-          <button 
+          <button
             onClick={() => setIsNotificationsOpen(!isNotificationsOpen)}
             className={`text-white hover:text-primary transition-all duration-300 ${isNotificationsOpen ? 'text-primary scale-110' : ''}`}
           >
             <LuBell size={24} />
             <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center border-2 border-[#111622] shadow-[0_0_8px_rgba(239,68,68,0.5)]">
-              3
+              4
             </span>
           </button>
-          
+
           <NotificationDropdown isOpen={isNotificationsOpen} />
         </div>
 

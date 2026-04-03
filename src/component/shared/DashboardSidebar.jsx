@@ -12,6 +12,7 @@ import {
     LogOut
 } from "lucide-react";
 import { IMAGES } from "../../assets";
+import shortLogo from "../../../public/logo-icon.png";
 
 const DashboardSidebar = ({
     collapsed = false,
@@ -55,7 +56,7 @@ const DashboardSidebar = ({
             {/* Logo Area */}
             <div className={`h-16 flex items-center justify-center border-b border-white/10 ${collapsed ? "justify-center" : "px-6"}`}>
                 <div className="flex items-center justify-center">
-                    <img src={IMAGES.logo} alt="EcoRide" className="p-12 object-contain" />
+                    <img src={collapsed ? shortLogo : IMAGES.logo} alt="EcoRide" className={`${collapsed ? "" : "p-12 object-contain"}`} />
                 </div>
             </div>
 
