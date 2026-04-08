@@ -13,6 +13,8 @@ export default {
         description: "#5C8289",
         card_bg: "#1A1F2B",
         fourth: "rgba(31, 167, 91, 0.15)",
+        landing_page_color: "#22C55E",
+        landing_page_description: "#9CA3AF",
       },
       boxShadow: {
         'active-nav': '0 0 10px 0 rgba(31, 167, 91, 0.3)',

@@ -10,11 +10,19 @@ import UserManagement from "../page/UserManagement";
 import Support from "../page/Support";
 import Feedback from "../page/Feedback";
 import Login from "../page/auth/Login";
+import MainLayout from "../layout/MainLayout";
+import Home from "../page/home/Home";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Navigate to="/dashboard" replace />,
+        element: <MainLayout />,
+        children: [
+            {
+                index: true,
+                element: <Home />,
+            },
+        ],
     },
     { path: "/login", element: <Login /> },
     {
