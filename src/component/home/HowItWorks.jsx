@@ -28,7 +28,7 @@ const stepsData = [
 
 export default function HowItWorks() {
     return (
-        <section id="how-it-works" className="bg-[#0A120A] py-16 lg:py-24 inter">
+        <section id="how-it-works" className="py-16 lg:py-24 inter">
             <div className="container mx-auto px-6">
                 {/* Header - using your existing LandingHeader */}
                 <LandingHeader
