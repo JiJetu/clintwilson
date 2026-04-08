@@ -19,7 +19,7 @@ export default function Hero() {
                         </div>
 
                         {/* Heading */}
-                        <h1 className="text-6xl lg:text-7xl font-bold leading-none tracking-normal text-white mb-6">
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-none tracking-normal text-white mb-6">
                             Your Smart{" "}
                             <br />
                             <span className="text-landing_page_color">Shuttle</span>
@@ -28,7 +28,7 @@ export default function Hero() {
                         </h1>
 
                         {/* Subtext */}
-                        <p className="text-xl text-landing_page_description max-w-2xl mb-10">
+                        <p className="text-sm md:text-xl text-landing_page_description max-w-2xl mb-10">
                             Seamless shuttle booking for events, corporate campuses, and large
                             venues. Track your ride in real-time and never miss a shuttle again.
                         </p>
@@ -41,7 +41,7 @@ export default function Hero() {
                             >
                                 <FaApple className="text-3xl leading-none" />
                                 <div className="text-left">
-                                    <div className="text-lg font-medium leading-none">App Store</div>
+                                    <div className="text-sm md:text-lg font-medium leading-none">App Store</div>
                                 </div>
                             </a>
 
@@ -53,7 +53,7 @@ export default function Hero() {
                                     <Play className="w-7 h-7 text-white" />
                                 </div>
                                 <div className="text-left">
-                                    <div className="text-lg font-medium leading-none">Google Play</div>
+                                    <div className="text-sm md:text-lg font-medium leading-none">Google Play</div>
                                 </div>
                             </a>
                         </div>

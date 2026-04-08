@@ -34,9 +34,9 @@ export default function CTA() {
                             <a
                                 className="group flex items-center gap-x-3 bg-landing_page_color hover:bg-landing_page_color/80 
                              active:scale-95 transition-all duration-200 text-white font-semibold 
-                             px-9 py-4 rounded-3xl text-lg w-full sm:w-auto justify-center"
+                             px-9 py-4 rounded-3xl text-sm md:text-lg w-full sm:w-auto justify-center"
                             >
-                                <FaApple className="text-3xl leading-none" />
+                                <FaApple className="text-xl md:text-3xl leading-none" />
                                 Download for iOS
                             </a>
 
@@ -44,7 +44,7 @@ export default function CTA() {
                             <a
                                 className="group flex items-center gap-x-3 bg-[#091409] hover:bg-[#091409]/80 
                              active:scale-95 transition-all duration-200 text-white font-semibold 
-                             px-9 py-4 rounded-3xl text-lg w-full sm:w-auto justify-center 
+                             px-9 py-4 rounded-3xl text-sm md:text-lg w-full sm:w-auto justify-center 
                              border border-white/10"
                             >
                                 <Play className="w-6 h-6" />
