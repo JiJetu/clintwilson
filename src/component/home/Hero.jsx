@@ -19,7 +19,7 @@ export default function Hero() {
                         </div>
 
                         {/* Heading */}
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-none tracking-normal text-white mb-6">
+                        <h1 className="text-4xl md:text-6xl xl:text-7xl font-bold leading-none tracking-normal text-white mb-6">
                             Your Smart{" "}
                             <br />
                             <span className="text-landing_page_color">Shuttle</span>
@@ -71,7 +71,7 @@ export default function Hero() {
                         <img
                             src={IMAGES.banner}
                             alt="EcoRide mobile app mockups"
-                            className="w-[900px] max-w-[380px] sm:max-w-[460px] lg:max-w-[1200px] mx-auto drop-shadow-2xl object-contain"
+                            className="w-[900px] max-w-[380px] sm:max-w-[600px] lg:max-w-[700px] xl:max-w-[800px] 2xl:max-w-[1200px] mx-auto drop-shadow-2xl object-contain border"
                         />
                     </div>
                 </div>
