@@ -35,7 +35,7 @@ const ShuttleStatusSidebar = () => {
   ];
 
   return (
-    <div className="w-full lg:w-[450px] border border-white/5 rounded-3xl p-8 flex flex-col shadow-2xl h-[750px]">
+    <div className="w-full lg:w-[450px] border border-white/5 rounded-3xl p-8 flex flex-col shadow-2xl h-[720px]">
       <div className="flex items-center justify-between mb-8">
         <h3 className="text-2xl font-medium text-white tracking-tight">Shuttles status</h3>
       </div>
