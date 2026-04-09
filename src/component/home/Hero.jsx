@@ -71,7 +71,7 @@ export default function Hero() {
                         <img
                             src={IMAGES.banner}
                             alt="EcoRide mobile app mockups"
-                            className="w-[900px] max-w-[380px] sm:max-w-[600px] lg:max-w-[700px] xl:max-w-[800px] 2xl:max-w-[1200px] mx-auto drop-shadow-2xl object-contain border"
+                            className="w-[900px] max-w-[380px] sm:max-w-[600px] lg:max-w-[700px] xl:max-w-[800px] 2xl:max-w-[1200px] mx-auto drop-shadow-2xl object-contain"
                         />
                     </div>
                 </div>
