@@ -98,7 +98,7 @@ const Login = () => {
                         isLoading={isLoading}
                         fullWidth
                         icon={LogIn}
-                        className="bg-[#F8F9FA] text-[#101319] hover:bg-white py-5 rounded-[20px] shadow-2xl shadow-black/20 font-bold"
+                        className="bg-white text-[#101319] hover:text-white hover:bg-primary py-5 rounded-[20px] shadow-2xl shadow-black/20 font-bold"
                     >
                         Sign In
                     </Button>
